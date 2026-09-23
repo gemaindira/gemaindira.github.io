@@ -1,286 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio</title>
-  <style>
-    /* Global Styles & Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #000;
-      overflow-x: hidden;
-    }
-    
-    /* Navigation (Fixed at Top) */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      padding: 10px 20px;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    
-    /* HERO SECTION */
-    .hero-section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-      color: #fff;
-      text-align: center;
-    }
-    /* Stars Overlay (Generated via JS) */
-    .stars {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    /* Star Element */
-    .star {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle 4s infinite ease-in-out;
-    }
-    @keyframes twinkle {
-      0%   { opacity: 0; transform: scale(0.5); }
-      50%  { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.5); }
-    }
-    /* Hero Content (Text + Image) */
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      padding: 0 20px;
-    }
-    .hero-text {
-      flex: 1 1 300px;
-      text-align: center;
-    }
-    .hero-text h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-    }
-    .hero-text p {
-      font-size: 1.5rem;
-    }
-    .hero-image {
-      flex: 1 1 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    
-    /* PORTFOLIO SECTION */
-    .portfolio-section {
-      padding: 80px 20px;
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-    }
-    .portfolio-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .portfolio-section p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 3px solid #ddd;
-      border-radius: 5px;
-    }
-    
-    /* SERVICES SECTION */
-    .services-section {
-      padding: 80px 20px;
-      background: #1E1E1E;
-      color: #fff;
-      text-align: center;
-    }
-    .services-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .services-list {
-      list-style: none;
-      padding: 0;
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-    }
-    .services-list li {
-      margin: 10px 0;
-    }
-    .btn {
-      display: inline-block;
-      background: #FF6600;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1rem;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #e65c00;
-    }
-    
-    /* CONTACT SECTION */
-    .contact-section {
-      padding: 80px 20px;
-      background: #fff;
-      color: #333;
-      text-align: center;
-    }
-    .contact-section h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      font-weight: 300;
-    }
-    .contact-section p {
-      font-size: 1rem;
-    }
-    
-    /* Responsive Adjustments (Optional) */
-    @media (max-width: 768px) {
-      .hero-text h1 {
-        font-size: 2.5rem;
-      }
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gema Sornoza, product manager in payments based in Stockholm.">
+<title>Gema Sornoza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F4F5F8; --surface:#FFFFFF; --ink:#16213A; --muted:#58627A; --line:#DDE1EA;
+  --accent:#FF877B; --accent-ink:#C23F33; --accent-soft:#FFE8E4; --sun:#FF877B; --sun-soft:#FFF1EE;
+  --good:#1F8A5B; --bad:#C2413A;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0E1422; --surface:#161E30; --ink:#E7EBF4; --muted:#9AA4BA; --line:#27314A;
+    --accent:#FF877B; --accent-ink:#FF9D93; --accent-soft:#3A2324; --sun:#FF877B; --sun-soft:#2C2126;
+    --good:#4CC28D; --bad:#F07A72;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0E1422; --surface:#161E30; --ink:#E7EBF4; --muted:#9AA4BA; --line:#27314A;
+  --accent:#FF877B; --accent-ink:#FF9D93; --accent-soft:#3A2324; --sun:#FF877B; --sun-soft:#2C2126;
+  --good:#4CC28D; --bad:#F07A72;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-inline:20px;padding-block:0 64px}
+.wrap{max-width:880px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;letter-spacing:-.01em}
+p{margin:0}
+.label{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+section{padding-block:56px 0;display:grid;gap:22px}
+a{color:var(--accent-ink)}
+:focus-visible{outline:3px solid var(--accent-ink);outline-offset:3px;border-radius:6px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;padding-block:64px 8px}
+.photo{width:148px;height:148px;border-radius:50%;background:var(--sun-soft);border:3px solid var(--sun);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:3rem;color:var(--ink);overflow:hidden;flex:none}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(2.6rem,7vw,4.2rem);font-weight:800;letter-spacing:-.02em}
+.hero .role{font-family:var(--display);font-weight:500;font-size:1.25rem;color:var(--accent-ink);margin-top:6px}
+.hero .lead{margin-top:14px;max-width:34em;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:.85rem;padding:5px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+
+/* story */
+.story{max-width:40em;font-size:1.08rem}
+.story p+p{margin-top:12px}
+.cities{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.city{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:grid;gap:2px;min-width:132px}
+.city b{font-family:var(--display);font-size:1.1rem}
+.city span{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.city.now{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.arrow{color:var(--accent-ink);font-weight:700;font-size:1.2rem}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:6px;align-content:start}
+.item h3{font-size:1.08rem;font-weight:700}
+.item p{color:var(--muted);font-size:.96rem}
+.intro{max-width:40em}
+
+/* how I work */
+.how{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 32px}
+.how div{border-top:3px solid var(--accent);padding-top:12px;display:grid;gap:6px;align-content:start}
+.how h3{font-size:1.15rem}
+.how p{color:var(--muted);font-size:.96rem}
+.how .from{font-size:.88rem;color:var(--ink)}
+.how .from b{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-ink);font-weight:500;margin-right:6px}
+
+/* beyond */
+.beyond{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.hob{background:var(--sun-soft);border-radius:14px;padding:16px 18px;display:grid;gap:4px;align-content:start}
+.hob b{font-family:var(--display);font-size:1.08rem}
+.hob span{font-size:.93rem;color:var(--muted)}
+
+/* game */
+.game{background:var(--accent-soft);border-radius:20px;padding:28px;display:grid;gap:16px}
+.game .q{font-family:var(--display);font-size:1.25rem;font-weight:700}
+.opts{display:grid;gap:10px}
+.opt{font:inherit;text-align:left;padding:14px 16px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .15s, transform .15s}
+.opt:hover{border-color:var(--accent);transform:translateY(-1px)}
+.opt.lie{border-color:var(--good)}
+.opt.wrong{border-color:var(--bad)}
+.opt[disabled]{cursor:default;transform:none}
+.reveal{font-size:.98rem;min-height:1.6em}
+.gamebar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;padding:10px 18px;border-radius:999px;border:none;background:var(--ink);color:var(--ground);cursor:pointer}
+.score{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+
+/* contact */
+.contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact code{font-family:var(--mono);font-size:.95rem;background:var(--surface);border:1px solid var(--line);padding:8px 12px;border-radius:10px;user-select:all}
+footer{margin-top:56px;color:var(--muted);font-size:.85rem}
+
+@media (max-width:680px){
+  .hero{grid-template-columns:1fr;gap:20px;padding-top:40px}
+  .photo{width:112px;height:112px;font-size:2.3rem}
+  .work,.how{grid-template-columns:1fr}
+  .beyond{grid-template-columns:1fr 1fr}
+  .arrow{display:none}
+  .game{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <!-- Stars Overlay -->
-    <div class="stars"></div>
-    
-    <!-- Hero Content (Text and Image) -->
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Your tagline goes here.</p>
-      </div>
-      <div class="hero-image">
-        <!-- Updated to use website-gema.svg -->
-        <img src="website-gema.svg" alt="Portfolio SVG">
-      </div>
+
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="photo"><img src="photo.jpg" alt="Gema Sornoza smiling"></div>
+  <div>
+    <h1>Hi, I'm Gema.</h1>
+    <p class="role">Product manager in payments · Stockholm</p>
+    <p class="lead">I have an entrepreneurial mindset: I like getting to the root of a problem and seeing it through to a solution that ships. Ecuadorian, shaped by three continents, and happiest when a messy problem finally clicks into place.</p>
+    <div class="chips">
+      <span class="chip">Payments</span><span class="chip">Product lifecycle</span><span class="chip">Cross-team alignment</span><span class="chip">AI in daily work</span>
     </div>
-  </section>
-  
-  <!-- PORTFOLIO SECTION -->
-  <section id="portfolio" class="portfolio-section">
-    <h2>My Work</h2>
-    <p>Here are some examples of projects I’ve worked on.</p>
-    <div class="portfolio-grid">
-      <!-- Replace sample images with your portfolio images -->
-      <div class="portfolio-item"><img src="Gema.png" alt="Portfolio Sample 1"></div>
-      <div class="portfolio-item"><img src="sample2.png" alt="Portfolio Sample 2"></div>
-      <div class="portfolio-item"><img src="sample3.png" alt="Portfolio Sample 3"></div>
-      <div class="portfolio-item"><img src="sample4.png" alt="Portfolio Sample 4"></div>
+  </div>
+</header>
+
+<section aria-labelledby="story-h">
+  <p class="label">My story</p>
+  <h2 id="story-h">Curiosity has taken me places</h2>
+  <div class="story">
+    <p>I'm a curious person, and that curiosity has taken me across three continents. Every move taught me to adapt, to learn fast, and to feel at home in something new.</p>
+    <p>My career has been one of exploration too. I started in marketing in Ecuador, studied in Beijing, and came to Lund to learn about entrepreneurship. There I realised that what really drives me is finding solutions and creating value, and that led me to product management. I'm still exploring, and I keep myself open to new challenges.</p>
+  </div>
+  <div class="cities" aria-label="Places I've lived">
+    <div class="city"><b>Guayaquil</b><span>Ecuador</span></div><span class="arrow" aria-hidden="true">→</span>
+    <div class="city"><b>Beijing</b><span>China</span></div><span class="arrow" aria-hidden="true">→</span>
+    <div class="city"><b>Lund</b><span>Sweden</span></div><span class="arrow" aria-hidden="true">→</span>
+    <div class="city now"><b>Stockholm</b><span>Sweden · now</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="work-h">
+  <p class="label">What I work on</p>
+  <h2 id="work-h">Payments people use every day</h2>
+  <p class="intro">I work in payments, on the products merchants rely on to get paid. It's a world where small details matter and mistakes cost something real, which is exactly why I like it.</p>
+  <div class="work">
+    <div class="item"><h3>Better payment experiences</h3><p>Improving how paying feels for merchants and their customers, together with UX and development partners.</p></div>
+    <div class="item"><h3>Bringing new products to market</h3><p>Designing the end-to-end customer journey so a new product works from the first order to everyday use.</p></div>
+    <div class="item"><h3>One way of working</h3><p>Turning processes that differ from team to team into one clear flow everyone agrees on.</p></div>
+    <div class="item"><h3>Making data visible</h3><p>Bringing data into the conversation so decisions rest on facts, not gut feeling.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="how-h">
+  <p class="label">How I work</p>
+  <h2 id="how-h">Ideas I live by</h2>
+  <p class="intro">I take inspiration from product thinkers like Marty Cagan and Melissa Perri, and my own path adds the rest.</p>
+  <div class="how">
+    <div><h3>Fall in love with the problem</h3><p>I ask why until the real problem shows up, before anyone talks about solutions.</p><p class="from"><b>From</b>studying entrepreneurship and working at a startup</p></div>
+    <div><h3>Outcomes over output</h3><p>Shipping isn't the goal. What changed for customers and the business is.</p><p class="from"><b>From</b>a commerce and finance background that taught me to think in value</p></div>
+    <div><h3>Comfortable with the unknown</h3><p>I'm at ease starting without all the answers and learning my way there.</p><p class="from"><b>From</b>building a life in four cities on three continents</p></div>
+    <div><h3>Bring the team along</h3><p>I share the why, so engineers, sales and operations can own the solution with me.</p><p class="from"><b>From</b>aligning teams across countries on one way of working</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="beyond-h">
+  <p class="label">Beyond work</p>
+  <h2 id="beyond-h">What makes me, me</h2>
+  <div class="beyond">
+    <div class="hob"><b>Pilates &amp; staying active</b><span>My reset button. Moving keeps my head clear.</span></div>
+    <div class="hob"><b>Hosting dinners</b><span>Good food, good friends, long conversations.</span></div>
+    <div class="hob"><b>Fashion</b><span>Learning about shapes, colours and styling.</span></div>
+    <div class="hob"><b>A good meme</b><span>I love social media, and I'll always stop for a good meme.</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="game-h">
+  <p class="label">Quick game</p>
+  <h2 id="game-h">Two truths and a lie</h2>
+  <div class="game" id="game">
+    <p class="q" id="q">Round 1: which one isn't true?</p>
+    <div class="opts" id="opts"></div>
+    <p class="reveal" id="reveal" aria-live="polite"></p>
+    <div class="gamebar">
+      <span class="score" id="score">Round 1 of 3</span>
+      <button class="btn" id="next" hidden>Next round</button>
     </div>
-  </section>
-  
-  <!-- SERVICES SECTION -->
-  <section id="services" class="services-section">
-    <h2>Services I Provide</h2>
-    <ul class="services-list">
-      <li>Creative Strategy & Branding</li>
-      <li>Graphic & Web Design</li>
-      <li>Digital Marketing</li>
-      <li>Consultation & Project Management</li>
-    </ul>
-    <a class="btn" href="https://calendly.com/your-scheduling-link" target="_blank">Book a Meeting</a>
-  </section>
-  
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section">
-    <h2>Get in Touch</h2>
-    <p>Contact me via email at <a href="mailto:you@example.com">you@example.com</a></p>
-  </section>
-  
-  <!-- JavaScript: Generate Stars in Hero Section -->
-  <script>
-    const numStars = 200; // Number of stars to generate
-    const starsContainer = document.querySelector('.stars');
-    
-    for (let i = 0; i < numStars; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      // Set random position
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      // Set random size between 1px and 4px
-      const size = Math.random() * 3 + 1;
-      star.style.width = size + 'px';
-      star.style.height = size + 'px';
-      // Set random animation duration between 3s and 6s (for slower twinkling)
-      const duration = Math.random() * 3 + 3;
-      star.style.animationDuration = duration + 's';
-      // Random animation delay so they don't all twinkle in sync
-      star.style.animationDelay = Math.random() * 5 + 's';
-      // Random color: mostly white, with some in #039490
-      star.style.background = Math.random() > 0.8 ? '#039490' : '#fff';
-      
-      starsContainer.appendChild(star);
-    }
-  </script>
+  </div>
+</section>
+
+<section aria-labelledby="contact-h">
+  <p class="label">Say hi</p>
+  <h2 id="contact-h">Let's talk</h2>
+  <p>Always happy to talk product, payments or a good dinner menu.</p>
+  <div class="contact">
+    <code>gemainsp@gmail.com</code>
+    <a href="https://www.linkedin.com/in/gemasornoza" target="_blank" rel="noopener">LinkedIn →</a>
+  </div>
+</section>
+
+<footer>Built with a little help from AI, which feels right.</footer>
+</div>
+
+<script>
+const rounds=[
+  {opts:["I've lived on three continents.","I studied public administration in Beijing.","I speak fluent Swedish."],lie:2,why:"Not yet! Spanish and English for now."},
+  {opts:["I once moved a whole sales team off spreadsheets.","I worked at a startup building a new kind of AI.","I've never opened Excel."],lie:2,why:"Excel and I go way back. Payments data doesn't analyse itself."},
+  {opts:["I grew up in Ecuador.","I have a master's in Entrepreneurship.","I'd rather ship it perfect than ship it at all."],lie:2,why:"I'd rather ship a first version, learn, and improve."}
+];
+let r=0,score=0;
+const q=document.getElementById('q'),opts=document.getElementById('opts'),rev=document.getElementById('reveal'),sc=document.getElementById('score'),next=document.getElementById('next');
+function render(){
+  q.textContent=`Round ${r+1}: which one isn't true?`;
+  rev.textContent='';next.hidden=true;opts.innerHTML='';
+  sc.textContent=`Round ${r+1} of ${rounds.length}`;
+  rounds[r].opts.forEach((t,i)=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=t;b.id=`opt-${r}-${i}`;
+    b.onclick=()=>pick(i);opts.appendChild(b);
+  });
+}
+function pick(i){
+  const R=rounds[r];const bs=[...opts.children];
+  bs.forEach(b=>b.disabled=true);
+  bs[R.lie].classList.add('lie');
+  if(i===R.lie){score++;rev.textContent='Got it. '+R.why;}
+  else{bs[i].classList.add('wrong');rev.textContent='That one is true! '+R.why;}
+  if(r<rounds.length-1){next.hidden=false;}
+  else{sc.textContent=`You got ${score} of ${rounds.length}. Now you know me a bit better.`;next.hidden=false;next.textContent='Play again';}
+}
+next.onclick=()=>{if(r<rounds.length-1){r++;}else{r=0;score=0;next.textContent='Next round';}render();};
+render();
+</script>
+
 </body>
 </html>
